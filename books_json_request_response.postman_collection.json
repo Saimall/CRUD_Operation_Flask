@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "bd8d9355-c17f-41cd-bbc0-017ef5a46ea1",
+		"name": "books_json_request_response",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23891328"
+	},
+	"item": [
+		{
+			"name": "fetching all the books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetching all the books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:55:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "293"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author\": \"Chetan Bhagat\",\n        \"gener\": \"Classic\",\n        \"id\": \"3\",\n        \"publication_year\": \"2010\",\n        \"title\": \"One Indian Girl\"\n    },\n    {\n        \"author\": \"F. Scott Fitzgerald\",\n        \"gener\": \"Classic\",\n        \"id\": \"1\",\n        \"publication_year\": \"1925\",\n        \"title\": \"The Great gabsy\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "fetching particular book with id as paramter",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "fetching particular book with given ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:04:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"F. Scott Fitzgerald\",\n    \"gener\": \"Classic\",\n    \"id\": \"1\",\n    \"publication_year\": \"1925\",\n    \"title\": \"The Great Gatsby\"\n}"
+				},
+				{
+					"name": "fetching particular book with id as paramter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:57:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"Chetan Bhagat\",\n    \"gener\": \"Classic\",\n    \"id\": \"3\",\n    \"publication_year\": \"2010\",\n    \"title\": \"One Indian Girl\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cretating a new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Chetan bagat\",\r\n    \"gener\": \"Classic\",\r\n    \"id\": \"3\",\r\n    \"publication_year\": \"2012\",\r\n    \"title\": \"One Indian Girl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cretating a new book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"author\": \"F. Scott Wisely\",\r\n    \"gener\": \"Classic\",\r\n    \"publication_year\": \"1945\",\r\n    \"title\": \"The Bluelink\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:58:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Book added successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "fetching all the books",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "fetching all the books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:59:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "434"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author\": \"Chetan Bhagat\",\n        \"gener\": \"Classic\",\n        \"id\": \"3\",\n        \"publication_year\": \"2010\",\n        \"title\": \"One Indian Girl\"\n    },\n    {\n        \"author\": \"F. Scott Fitzgerald\",\n        \"gener\": \"Classic\",\n        \"id\": \"1\",\n        \"publication_year\": \"1925\",\n        \"title\": \"The Great gabsy\"\n    },\n    {\n        \"author\": \"F. Scott Wisely\",\n        \"gener\": \"Classic\",\n        \"id\": \"4\",\n        \"publication_year\": \"1945\",\n        \"title\": \"The Bluelink\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Updating the book",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Updating the book",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"F.Scott jackson\",\r\n    \"gener\": \"Classic\",\r\n    \"publication_year\": \"1956\",\r\n    \"title\": \"The Great luky\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:03:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"book updated successfully\"\n}"
+				},
+				{
+					"name": "fetching the updated record",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"F. Scott\",\r\n    \"gener\": \"Classic\",\r\n    \"publication_year\": \"1925\",\r\n    \"title\": \"The Great Gatsby\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:04:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"F.Scott jackson\",\n    \"gener\": \"Classic\",\n    \"id\": \"4\",\n    \"publication_year\": \"1956\",\n    \"title\": \"The Great luky\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Deleting a Record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Deleting a Record",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:06:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"book with that ID deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Searching the book",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "searching the name with title",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/searchbook/The Great gabsy",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"searchbook",
+								"The Great gabsy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:17:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author\": \"F. Scott Fitzgerald\",\n        \"gener\": \"Classic\",\n        \"id\": \"1\",\n        \"publication_year\": \"1925\",\n        \"title\": \"The Great gabsy\"\n    }\n]"
+				},
+				{
+					"name": "searching the name with author",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/searchbook/F. Scott Fitzgerald",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"searchbook",
+								"F. Scott Fitzgerald"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:29:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author\": \"F. Scott Fitzgerald\",\n        \"gener\": \"Classic\",\n        \"id\": \"1\",\n        \"publication_year\": \"1925\",\n        \"title\": \"The Great gabsy\"\n    }\n]"
+				},
+				{
+					"name": "searching the name with year",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/searchbook/1956",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"searchbook",
+								"1956"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 13:31:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"author\": \"F.Scott jackson\",\n        \"gener\": \"Classic\",\n        \"id\": \"4\",\n        \"publication_year\": \"1956\",\n        \"title\": \"The Great luky\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
